@@ -1,0 +1,9 @@
+<h1>Show me the data</h1>
+
+{% for post in object_list %}
+<h2>{{ post.title }}</h2>
+<p><i>{{ post.timestamp|date:"M d, Y" }}</i></p>
+<p>{{ post.content|linebreaks }}</p>
+<p>{{ post.code|linebreaks }}</p>
+<p><img src="{{ post.image.url }}" style='max-width:100%;'></p>
+{% endfor %}
