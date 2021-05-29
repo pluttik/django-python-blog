@@ -1,0 +1,17 @@
+<div style="max-width:800px; margin:auto;">
+<h1>Show me the data</h1>
+
+<h2>{{ post.title }}</h2>
+<p><i>{{ post.timestamp|date:"M d, Y" }}</i></p>
+<p>{{ post.content|linebreaks }}</p>
+<p><pre>{{ post.code|linebreaks }}</pre></p>
+{% if post.image %}
+    <p><img src="{{ post.image.url }}" style='max-width:100%;'></p>
+{% endif %}
+<p style="color:blue;">tags:
+{% for tag in post.tags.all %}
+    <a href="/posts/{{ tag.name }}">{{ tag.name }}</a>
+{% endfor %}</p>
+<hr>
+
+</div>
