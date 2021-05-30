@@ -17,3 +17,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.slug
+
+class Log(models.Model):
+    path      = models.CharField(max_length=120)
+    ip        = models.CharField(max_length=50)
+    timestamp = models.DateTimeField(auto_now_add=False)
+    query     = models.TextField(default="none")
+
+    def __str__(self):
+        return self.ip
