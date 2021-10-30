@@ -1,7 +1,8 @@
-<div style="max-width:800px; margin:auto; font-family:georgia; font-size:1.1em; line-height:1.3;">
+<div style="max-width:800px; margin:auto; font-family:georgia; font-size:1.1em; line-height:1.5;
+    color: #545454;">
 <h1>Show me the data</h1>
 
-<p><a href="/posts">all blog posts</a>
+<p><a style="color: #7BA7B6" href="/posts">all blog posts</a>
 
 <h2>{{ post.title }}</h2>
 <p><i>{{ post.timestamp|date:"M d, Y" }}</i></p>
@@ -10,9 +11,9 @@
 {% if post.image %}
     <p><img src="{{ post.image.url }}" style='max-width:100%;'></p>
 {% endif %}
-<p style="color:blue;">tags:
+<p><i>tags:</i>
 {% for tag in post.tags.all %}
-    <a href="/posts/{{ tag.name }}">{{ tag.name }}</a>
+    <a style="color: #36A93B" href="/posts/{{ tag.name }}">{{ tag.name }}</a>
 {% endfor %}</p>
 <hr>
 
